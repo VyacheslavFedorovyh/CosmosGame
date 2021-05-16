@@ -11,7 +11,6 @@ public class ScrollerScript : MonoBehaviour
     {
         startPosition = transform.position;
     }
-
     
     void Update()
     {

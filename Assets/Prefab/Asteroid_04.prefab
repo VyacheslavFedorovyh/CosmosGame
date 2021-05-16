@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!54 &4922005373945374916
+--- !u!54 &-4803782496224960839
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d80c9b512f6542499d0edc8a4c2d3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AsteroidExplosion: {fileID: 5414438422968810247, guid: 8098bdb4b05658c49a5cba145ed9d7cd, type: 3}
-  PlayerExplosion: {fileID: 6588142899641850421, guid: 2ca7d3e3dacad1d45bdc0a4f8c0ed6c5, type: 3}
+  asteroidExplosion: {fileID: 5414438422968810247, guid: 8098bdb4b05658c49a5cba145ed9d7cd, type: 3}
+  playerExplosion: {fileID: 6588142899641850421, guid: 2ca7d3e3dacad1d45bdc0a4f8c0ed6c5, type: 3}
   xSpread: 0.2
   minSpeed: 20
-  maxSpeed: 60
+  maxSpeed: 45
   rotationSpeed: 30
 --- !u!1001 &3246461313453361826
 PrefabInstance:

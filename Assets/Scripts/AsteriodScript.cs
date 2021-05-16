@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AsteriodScript : MonoBehaviour
 {
-	public GameObject AsteroidExplosion;
-	public GameObject PlayerExplosion;
+	public GameObject asteroidExplosion;
+	public GameObject playerExplosion;
 
 	float speed;
 	float xSpeed;
@@ -28,11 +28,6 @@ public class AsteriodScript : MonoBehaviour
 		asteroid.transform.localScale *= Random.Range(1f, 2.2f);
 	}
 
-	void Update()
-	{
-
-	}
-
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Asteroid")
@@ -49,10 +44,10 @@ public class AsteriodScript : MonoBehaviour
 		if (other.tag == "LaserShot")
 			GameController.score += 50;
 
-		if (other.tag == "Player")
-			Instantiate(PlayerExplosion, other.transform.position, Quaternion.identity);
+		if (other.tag == "Player" || other.tag == "Enemy")
+			Instantiate(playerExplosion, other.transform.position, Quaternion.identity);
 
-		Instantiate(AsteroidExplosion, transform.position, Quaternion.identity);
+		Instantiate(asteroidExplosion, transform.position, Quaternion.identity);
 
 		Destroy(other.gameObject);
 		Destroy(gameObject);

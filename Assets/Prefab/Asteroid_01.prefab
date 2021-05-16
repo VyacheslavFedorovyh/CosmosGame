@@ -41,11 +41,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d80c9b512f6542499d0edc8a4c2d3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AsteroidExplosion: {fileID: 5414438422968810247, guid: 8098bdb4b05658c49a5cba145ed9d7cd, type: 3}
-  PlayerExplosion: {fileID: 6588142899641850421, guid: 2ca7d3e3dacad1d45bdc0a4f8c0ed6c5, type: 3}
-  xSpread: 0.5
+  asteroidExplosion: {fileID: 5414438422968810247, guid: 8098bdb4b05658c49a5cba145ed9d7cd, type: 3}
+  playerExplosion: {fileID: 6588142899641850421, guid: 2ca7d3e3dacad1d45bdc0a4f8c0ed6c5, type: 3}
+  xSpread: 0.2
   minSpeed: 20
-  maxSpeed: 45
+  maxSpeed: 40
   rotationSpeed: 35
 --- !u!1001 &1577643569972451437
 PrefabInstance:
