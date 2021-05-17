@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
-{
-	Rigidbody enemy;
-	float nextLaserTime;
+{	
+	float nextRocketTime;
 
 	public float speed;
 	public float titl;
@@ -13,9 +12,9 @@ public class EnemyScript : MonoBehaviour
 
 	public GameObject enemyExplosion;
 
-	public GameObject laserShot;
-	public GameObject laserGunLeft;
-	public GameObject laserGunRight;
+	public GameObject rocket;
+	public GameObject rocketGunLeft;
+	public GameObject rocketGunRight;
 
 	[Tooltip("Game Boundary Enemy")]
 	public float xMin, xMax, zMin, zMax;
@@ -25,8 +24,6 @@ public class EnemyScript : MonoBehaviour
 
 	private void Start()
 	{
-		//enemy = GetComponent<Rigidbody>();
-
 		enemyTransform = transform;
 		playerTransform = GameObject.FindWithTag("Player").transform;
 	}
@@ -40,13 +37,13 @@ public class EnemyScript : MonoBehaviour
 			enemyTransform.LookAt(playerTransform);
 			enemyTransform.position += enemyTransform.forward * speed * Time.deltaTime;
 		}
-		else 
-		{
-			float correcX = Mathf.Clamp(enemy.position.x, xMin, xMax);
-			enemy.position = new Vector3(correcX, 0, zMin);
-		}
-		//var playerPosition = GameObject.FindWithTag("Player").transform.position;
+		//else 
+		//{
+		//	float correcX = Mathf.Clamp(enemy.position.x, xMin, xMax);
+		//	enemy.position = new Vector3(correcX, 0, zMin);
+		//}
 
+		//var playerPosition = GameObject.FindWithTag("Player").transform.position;
 
 		//float moveHorizontal = Input.GetAxis("Horizontal");
 		//float moveVertical = Input.GetAxis("Vertical");
@@ -60,12 +57,14 @@ public class EnemyScript : MonoBehaviour
 
 		//enemy.rotation = Quaternion.Euler(enemy.velocity.z * titl, 0, -enemy.velocity.x * titl);
 
-		//if (Time.time > nextLaserTime)
-		//{
-		//	Instantiate(laserShot, laserGunLeft.transform.position, Quaternion.identity);
-		//	Instantiate(laserShot, laserGunRight.transform.position, Quaternion.identity);
-		//	nextLaserTime = Time.time + shotDelay;
-		//}
+		if (Time.time > nextRocketTime)
+		{			
+			var i = Instantiate(rocket, rocketGunLeft.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+			Instantiate(rocket, rocketGunRight.transform.position, Quaternion.identity).GetComponent<Rigidbody>().velocity = enemyTransform.forward * speed * 1.5f;
+			i.velocity = enemyTransform.forward * speed * 1.5f;
+
+			nextRocketTime = Time.time + shotDelay;
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)
