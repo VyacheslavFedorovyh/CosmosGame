@@ -1073,7 +1073,7 @@ MonoBehaviour:
   - {fileID: 8990622656143252021, guid: dbdc5714dfa627b4fab163e8a0dfe502, type: 3}
   - {fileID: 6321841122768118444, guid: 5868bca02e60bb342b6f9e2e90ed9694, type: 3}
   - {fileID: 3246461313453263874, guid: cfc652df34add184db9ef60e5d4327ae, type: 3}
-  launchDelayAsteroid: 30
+  launchDelayAsteroid: 0.5
 --- !u!23 &1195673064
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1514,8 +1514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3143e045c45874c8aa76f3f2178ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabEnemy: {fileID: 4684460140130514929, guid: 520308219b1d635469cc37617efc5759, type: 3}
-  launchDelayEnemy: 20
+  prefabEnemy: {fileID: 1915418600458204753, guid: 520308219b1d635469cc37617efc5759, type: 3}
+  launchDelayEnemy: 10
 --- !u!23 &1640345981
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1943,8 +1943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3143e045c45874c8aa76f3f2178ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabEnemy: {fileID: 4684460140130514929, guid: 520308219b1d635469cc37617efc5759, type: 3}
-  launchDelayEnemy: 20
+  prefabEnemy: {fileID: 1915418600458204753, guid: 520308219b1d635469cc37617efc5759, type: 3}
+  launchDelayEnemy: 10
 --- !u!23 &1822921826
 MeshRenderer:
   m_ObjectHideFlags: 0
