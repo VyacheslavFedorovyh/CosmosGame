@@ -122,17 +122,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5aa0fd855351cb418833c4d88ea19bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 18
   titl: 0.5
   shotDelay: 5
   enemyExplosion: {fileID: 2474311900941322500, guid: f2d5c25c81d733a4fb3d26561f647451, type: 3}
-  rocket: {fileID: 6032658905198852981, guid: 8e6aed31b3748e74fa5110e9fbdf34f4, type: 3}
-  rocketGunLeft: {fileID: 990446021626546719}
-  rocketGunRight: {fileID: 7267475249688867516}
+  _rocket: {fileID: 6032658905198852981, guid: 8e6aed31b3748e74fa5110e9fbdf34f4, type: 3}
+  rocketGunPositions:
+  - {fileID: 990446021626546719}
+  - {fileID: 7267475249688867516}
   xMin: -46
   xMax: 46
   zMin: -37.5
-  zMax: -5
+  zMax: -38
 --- !u!1 &7267475249688867516
 GameObject:
   m_ObjectHideFlags: 0

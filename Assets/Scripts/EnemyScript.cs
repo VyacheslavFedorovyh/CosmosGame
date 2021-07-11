@@ -12,9 +12,8 @@ public class EnemyScript : MonoBehaviour
 
 	public GameObject enemyExplosion;
 
-	public GameObject rocket;
-	public GameObject rocketGunLeft;
-	public GameObject rocketGunRight;
+	[SerializeField] private GameObject _rocket;
+	public List<GameObject> rocketGunPositions;
 
 	[Tooltip("Game Boundary Enemy")]
 	public float xMin, xMax, zMin, zMax;
@@ -32,38 +31,21 @@ public class EnemyScript : MonoBehaviour
 	{
 		if (!GameController.isStarted)
 			return;
+
 		if (enemyTransform.position.z > zMax)
 		{
 			enemyTransform.LookAt(playerTransform);
 			enemyTransform.position += enemyTransform.forward * speed * Time.deltaTime;
 		}
-		//else 
-		//{
-		//	float correcX = Mathf.Clamp(enemy.position.x, xMin, xMax);
-		//	enemy.position = new Vector3(correcX, 0, zMin);
-		//}
-
-		//var playerPosition = GameObject.FindWithTag("Player").transform.position;
-
-		//float moveHorizontal = Input.GetAxis("Horizontal");
-		//float moveVertical = Input.GetAxis("Vertical");
-
-		//enemy.velocity = new Vector3(moveHorizontal, 0, moveVertical) * speed;
-
-		//float correcX = Mathf.Clamp(enemy.position.x, xMin, xMax);
-		//float correcZ = zMin;
-
-		//enemy.position = new Vector3(correcX, 0, correcZ);
-
-		//enemy.rotation = Quaternion.Euler(enemy.velocity.z * titl, 0, -enemy.velocity.x * titl);
 
 		if (Time.time > nextRocketTime)
-		{			
-			var i = Instantiate(rocket, rocketGunLeft.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-			Instantiate(rocket, rocketGunRight.transform.position, Quaternion.identity).GetComponent<Rigidbody>().velocity = enemyTransform.forward * speed * 1.5f;
-			i.velocity = enemyTransform.forward * speed * 1.5f;
-
-			nextRocketTime = Time.time + shotDelay;
+		{
+			foreach (var rocketGunPosition in rocketGunPositions)
+			{
+				GameObject rocket = Instantiate(_rocket, rocketGunPosition.transform.position, rocketGunPosition.transform.rotation);
+				rocket.GetComponent<Rigidbody>().velocity = enemyTransform.forward * speed * 1.5f;
+				nextRocketTime = Time.time + shotDelay;
+			}			
 		}
 	}
 
