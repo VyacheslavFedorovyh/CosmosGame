@@ -24,12 +24,26 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6032658905198852981}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.25
   m_Height: 2.7
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1720001230649950028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032658905198852981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0b287a95a9c944c9e2cf35ac789241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidExplosion: {fileID: 5414438422968810247, guid: 8098bdb4b05658c49a5cba145ed9d7cd, type: 3}
+  playerExplosion: {fileID: 6588142899641850421, guid: 2ca7d3e3dacad1d45bdc0a4f8c0ed6c5, type: 3}
 --- !u!1001 &6033757629422565643
 PrefabInstance:
   m_ObjectHideFlags: 0
